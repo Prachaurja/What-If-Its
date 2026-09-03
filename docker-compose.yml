@@ -1,0 +1,27 @@
+# Dev stack: Postgres, Redis, MinIO. The API and worker run on your host
+# (uvicorn / celery) during development so reloads are instant.
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: swipe
+      POSTGRES_PASSWORD: swipe
+      POSTGRES_DB: swipe
+    ports: ["5432:5432"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+  redis:
+    image: redis:7
+    ports: ["6379:6379"]
+    volumes: [redisdata:/data]
+  minio:
+    image: minio/minio
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: swipe
+      MINIO_ROOT_PASSWORD: swipe-secret
+    ports: ["9000:9000", "9001:9001"]
+    volumes: [miniodata:/data]
+volumes:
+  pgdata: {}
+  redisdata: {}
+  miniodata: {}

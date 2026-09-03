@@ -1,0 +1,157 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Swipe wireframes</title>
+<style>
+  body{margin:0;font:13px/1.4 -apple-system,Helvetica,Arial,sans-serif;color:#222;background:#fff}
+  .screen{width:1280px;height:820px;position:relative;background:#F4F4F2;overflow:hidden}
+  .screen h6{position:absolute;top:8px;right:12px;margin:0;font:11px monospace;color:#888}
+  .box{position:absolute;border:1.5px solid #333;background:#fff;border-radius:3px}
+  .grey{background:#E4E4E0}
+  .lbl{position:absolute;color:#333}
+  .lbl.h{font-weight:700;font-size:18px}
+  .lbl.s{color:#777;font-size:12px}
+  .btn{position:absolute;border:1.5px solid #333;border-radius:3px;background:#333;color:#fff;text-align:center;font-weight:600}
+  .btn.o{background:#fff;color:#333}
+  .line{position:absolute;height:0;border-top:1.5px solid #333}
+  .hatch{position:absolute;background:repeating-linear-gradient(45deg,#fff,#fff 6px,#ddd 6px,#ddd 7px);border:1.5px solid #333;border-radius:3px}
+  .txt{position:absolute;font-size:12px;color:#333;line-height:1.7}
+  .hl{background:#FFE45C;padding:0 1px}
+  .ai{text-decoration:underline wavy #D8322A;text-underline-offset:3px}
+  .side{position:absolute;left:0;top:0;width:220px;height:820px;background:#fff;border-right:1.5px solid #333}
+  .nav{position:absolute;left:24px;font-size:13px}
+  .nav.on{font-weight:700}
+  .top{position:absolute;left:220px;top:0;right:0;height:52px;background:#fff;border-bottom:1.5px solid #333}
+  .row{position:absolute;left:0;right:0;height:1px;border-top:1px solid #ccc}
+  .ring{position:absolute;width:60px;height:60px;border:8px solid #ccc;border-top-color:#333;border-radius:50%}
+  .chip{position:absolute;padding:2px 8px;border:1.5px solid #333;border-radius:12px;font-size:11px;background:#fff}
+  .note{position:absolute;font-size:11px;color:#a33;font-style:italic}
+</style></head><body>
+
+<!-- 1 SIGN IN -->
+<div class="screen" id="s1"><h6>01 · Sign in</h6>
+  <div class="lbl h" style="left:520px;top:180px">Swipe</div>
+  <div class="box" style="left:440px;top:230px;width:400px;height:360px"></div>
+  <div class="lbl" style="left:470px;top:256px">Email</div><div class="box" style="left:470px;top:276px;width:340px;height:36px"></div>
+  <div class="lbl" style="left:470px;top:326px">Password</div><div class="box" style="left:470px;top:346px;width:340px;height:36px"></div>
+  <div class="btn" style="left:470px;top:404px;width:340px;height:38px;line-height:38px">Sign in</div>
+  <div class="line" style="left:470px;top:466px;width:340px"></div>
+  <div class="btn o" style="left:470px;top:482px;width:340px;height:38px;line-height:38px">Continue with Google</div>
+  <div class="lbl s" style="left:470px;top:540px">No account? <u>Create one</u> · <u>Forgot password</u></div>
+  <div class="note" style="left:860px;top:300px;width:200px">Individual sign-up creates a personal org automatically. Institutions/publishers arrive via invite link.</div>
+</div>
+
+<!-- 2 DASHBOARD -->
+<div class="screen" id="s2"><h6>02 · Dashboard</h6>
+  <div class="side"><div class="lbl h" style="left:24px;top:18px;font-size:16px">Swipe</div>
+    <div class="box grey" style="left:24px;top:56px;width:172px;height:34px"></div><div class="lbl s" style="left:34px;top:64px">La Trobe University ▾</div>
+    <div class="nav on" style="top:120px">Checks</div><div class="nav" style="top:150px">New check</div><div class="nav" style="top:180px">Sources</div><div class="nav" style="top:210px">Members</div><div class="nav" style="top:240px">Settings</div>
+    <div class="box" style="left:24px;top:720px;width:172px;height:70px"></div><div class="lbl s" style="left:34px;top:730px">Team plan<br>412 / 2,000 checks<br><span style="display:inline-block;width:150px;height:6px;background:#ccc;margin-top:6px"><span style="display:block;width:31px;height:6px;background:#333"></span></span></div>
+  </div>
+  <div class="top"><div class="lbl h" style="left:250px;top:14px;font-size:16px">Checks</div><div class="btn" style="left:1120px;top:10px;width:130px;height:32px;line-height:32px">+ New check</div></div>
+  <div class="box" style="left:250px;top:76px;width:300px;height:32px"></div><div class="lbl s" style="left:262px;top:84px">🔍 Search title or author</div>
+  <div class="chip" style="left:566px;top:80px">Status ▾</div><div class="chip" style="left:640px;top:80px">Similarity ▾</div><div class="chip" style="left:730px;top:80px">AI ▾</div><div class="chip" style="left:784px;top:80px">Date ▾</div><div class="chip" style="left:846px;top:80px">Checked by ▾</div>
+  <div class="box" style="left:250px;top:126px;width:1000px;height:640px"></div>
+  <div class="lbl s" style="left:270px;top:138px;width:960px"><span style="display:inline-block;width:380px">Title</span><span style="display:inline-block;width:150px">Checked by</span><span style="display:inline-block;width:130px">Date</span><span style="display:inline-block;width:110px">Similarity</span><span style="display:inline-block;width:110px">AI writing</span>Status</div>
+  <div class="row" style="left:250px;top:162px;width:1000px"></div>
+  <div class="txt" style="left:270px;top:172px;width:960px">
+    <div style="height:38px"><span style="display:inline-block;width:380px">Essay_2_Climate_Policy.docx</span><span style="display:inline-block;width:150px">A. Nguyen</span><span style="display:inline-block;width:130px">2 Sep, 14:02</span><span style="display:inline-block;width:110px">▮▮▮▯▯ 34%</span><span style="display:inline-block;width:110px">▮▮▮▮▯ 78%</span>Done</div>
+    <div style="height:38px"><span style="display:inline-block;width:380px">Lab report — enzyme kinetics.pdf</span><span style="display:inline-block;width:150px">A. Nguyen</span><span style="display:inline-block;width:130px">2 Sep, 13:51</span><span style="display:inline-block;width:110px">▮▯▯▯▯ 6%</span><span style="display:inline-block;width:110px">— not scored</span>Done</div>
+    <div style="height:38px"><span style="display:inline-block;width:380px">Group project final.docx</span><span style="display:inline-block;width:150px">S. Kumar</span><span style="display:inline-block;width:130px">2 Sep, 13:40</span><span style="display:inline-block;width:110px">…</span><span style="display:inline-block;width:110px">…</span>Running ◔</div>
+    <div style="height:38px;color:#999"><span style="display:inline-block;width:380px">Literature review draft.docx</span><span style="display:inline-block;width:150px">S. Kumar</span><span style="display:inline-block;width:130px">2 Sep, 13:39</span><span style="display:inline-block;width:110px"></span><span style="display:inline-block;width:110px"></span>Queued (2 ahead)</div>
+    <div style="height:38px"><span style="display:inline-block;width:380px">Week 6 reflection.txt</span><span style="display:inline-block;width:150px">A. Nguyen</span><span style="display:inline-block;width:130px">1 Sep, 09:12</span><span style="display:inline-block;width:110px">▯▯▯▯▯ 0%</span><span style="display:inline-block;width:110px">▮▯▯▯▯ 12%</span>Done</div>
+  </div>
+  <div class="row" style="left:250px;top:366px;width:1000px"></div>
+  <div class="lbl s" style="left:270px;top:740px">Showing 5 of 412 · ‹ 1 2 3 … 83 ›</div>
+  <div class="note" style="left:900px;top:600px;width:320px">Rows are clickable → Report. Bars give instant scan; numbers on hover. Status polls every 2 s while queued/running.</div>
+</div>
+
+<!-- 3 NEW CHECK -->
+<div class="screen" id="s3"><h6>03 · New check</h6>
+  <div class="side"><div class="lbl h" style="left:24px;top:18px;font-size:16px">Swipe</div><div class="box grey" style="left:24px;top:56px;width:172px;height:34px"></div><div class="lbl s" style="left:34px;top:64px">La Trobe University ▾</div>
+    <div class="nav" style="top:120px">Checks</div><div class="nav on" style="top:150px">New check</div><div class="nav" style="top:180px">Sources</div><div class="nav" style="top:210px">Members</div><div class="nav" style="top:240px">Settings</div></div>
+  <div class="top"><div class="lbl h" style="left:250px;top:14px;font-size:16px">New check</div></div>
+  <div class="box" style="left:250px;top:80px;width:660px;height:680px"></div>
+  <div class="hatch" style="left:290px;top:120px;width:580px;height:300px"></div>
+  <div class="lbl h" style="left:470px;top:220px;font-size:16px">Drop a document here</div>
+  <div class="lbl s" style="left:470px;top:248px">.docx · .pdf · .txt · .md — up to 10 MB / 50,000 words</div>
+  <div class="btn o" style="left:530px;top:290px;width:110px;height:32px;line-height:32px">Choose file</div>
+  <div class="lbl s" style="left:560px;top:436px">— or —</div>
+  <div class="box" style="left:290px;top:462px;width:580px;height:120px"></div><div class="lbl s" style="left:302px;top:472px">Paste text…</div>
+  <div class="lbl" style="left:290px;top:600px">Title (optional)</div><div class="box" style="left:290px;top:620px;width:400px;height:32px"></div>
+  <div class="btn" style="left:730px;top:700px;width:140px;height:38px;line-height:38px">Run check →</div>
+  <div class="box" style="left:940px;top:80px;width:310px;height:400px"></div>
+  <div class="lbl h" style="left:960px;top:96px;font-size:14px">Options</div>
+  <div class="txt" style="left:960px;top:126px;line-height:2.1">☑ Compare against our repository<br>☑ Compare against public corpus<br>☑ Search the web for matches<br>☑ AI-writing detection<br>☐ Exclude quoted text<br>☑ Exclude references section<br><br>Course / folder<br><span class="box" style="position:static;display:inline-block;width:250px;height:28px;vertical-align:middle"></span></div>
+  <div class="lbl s" style="left:960px;top:420px;width:270px">Defaults come from org settings. Free plan hides web search and full AI ensemble.</div>
+  <div class="note" style="left:940px;top:520px;width:300px">Upload is direct to MinIO via presigned URL for files > 2 MB; API only receives the key.</div>
+</div>
+
+<!-- 4 REPORT -->
+<div class="screen" id="s4"><h6>04 · Report</h6>
+  <div class="top" style="left:0"><div class="lbl s" style="left:24px;top:18px">‹ Checks</div><div class="lbl h" style="left:100px;top:14px;font-size:15px">Essay_2_Climate_Policy.docx</div><div class="lbl s" style="left:420px;top:18px">A. Nguyen · 2 Sep 14:02 · 1,840 words · engine 2.1</div>
+    <div class="btn o" style="left:1020px;top:10px;width:100px;height:32px;line-height:32px">Export PDF</div><div class="btn o" style="left:1130px;top:10px;width:120px;height:32px;line-height:32px">Options ▾</div></div>
+  <div class="box" style="left:24px;top:76px;width:820px;height:730px"></div>
+  <div class="txt" style="left:72px;top:110px;width:720px;font-size:14px;line-height:1.9">
+    <b>Climate policy and the limits of carbon pricing</b><br><br>
+    Carbon pricing has become the default instrument of climate policy across advanced economies. <span class="ai">It is widely recognised that market-based mechanisms offer a cost-effective pathway towards decarbonisation while preserving economic flexibility.</span> <span class="ai">Furthermore, such approaches align incentives across a diverse range of stakeholders.</span> Yet the Australian experience between 2012 and 2014 suggests that political durability matters more than theoretical efficiency.<br><br>
+    <span class="hl">The scheme covered roughly 60 per cent of national emissions and applied a fixed price of $23 per tonne, rising annually before a planned transition to a floating price</span> — a design that critics on both sides found reasons to oppose. In my view the repeal was not a verdict on carbon pricing itself but on the coalition that built it.<br><br>
+    <span class="hl">Emissions in the electricity sector fell by around 7 per cent during the fixed-price period</span>, though attribution remains contested. …
+  </div>
+  <div class="box" style="left:868px;top:76px;width:388px;height:730px"></div>
+  <div class="txt" style="left:888px;top:88px;font-weight:700"><span style="border-bottom:2px solid #333;padding-bottom:4px">Sources</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#888">AI writing</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#888">Details</span></div>
+  <div class="ring" style="left:892px;top:130px"></div><div class="lbl h" style="left:966px;top:136px;font-size:24px">34%</div><div class="lbl s" style="left:966px;top:166px">matches a known source · 612 words<br>61 words excluded (references)</div>
+  <div class="ring" style="left:892px;top:216px;border-top-color:#D8322A"></div><div class="lbl h" style="left:966px;top:222px;font-size:24px">70–85%</div><div class="lbl s" style="left:966px;top:252px">likely AI-involved · 3 sentences flagged<br>detectors agree · <u>how to read this</u></div>
+  <div class="line" style="left:888px;top:300px;width:348px"></div>
+  <div class="txt" style="left:888px;top:312px;width:348px;line-height:2.4">
+    <span class="hl">■</span> 1. Parliamentary Library — Carbon price… <span style="float:right">18.2%</span><br>
+    <span class="hl">■</span> 2. Submission #812 (S. Patel, 2025) <span style="float:right">9.6%</span><br>
+    <span class="hl">■</span> 3. theconversation.com/…-repeal <span style="float:right">4.1%</span><br>
+    <span class="hl">■</span> 4. Wikipedia — Clean Energy Act 2011 <span style="float:right">2.5%</span>
+  </div>
+  <div class="box grey" style="left:888px;top:440px;width:348px;height:200px"></div>
+  <div class="lbl s" style="left:900px;top:450px;width:324px"><b>Side-by-side</b> (click a source)<br><br>Submission ▸ "…applied a fixed price of $23 per tonne, rising annually…"<br><br>Source ▸ "…applied a fixed price of $23 per tonne, rising by 2.5% annually…"</div>
+  <div class="lbl s" style="left:888px;top:660px;width:348px;font-style:italic">AI-writing signals are probabilistic and can be wrong, especially for formulaic or non-native writing. Use as a prompt for review, not evidence.</div>
+  <div class="note" style="left:60px;top:740px;width:760px">Yellow = matched passage (click → jumps source list). Red wavy = AI-flagged sentence (opacity ∝ score). Hover any mark for detail. Highlights sweep in on load.</div>
+</div>
+
+<!-- 5 SOURCES -->
+<div class="screen" id="s5"><h6>05 · Sources (repository)</h6>
+  <div class="side"><div class="lbl h" style="left:24px;top:18px;font-size:16px">Swipe</div><div class="box grey" style="left:24px;top:56px;width:172px;height:34px"></div><div class="lbl s" style="left:34px;top:64px">La Trobe University ▾</div>
+    <div class="nav" style="top:120px">Checks</div><div class="nav" style="top:150px">New check</div><div class="nav on" style="top:180px">Sources</div><div class="nav" style="top:210px">Members</div><div class="nav" style="top:240px">Settings</div></div>
+  <div class="top"><div class="lbl h" style="left:250px;top:14px;font-size:16px">Repository</div><div class="btn" style="left:1100px;top:10px;width:150px;height:32px;line-height:32px">+ Add sources</div></div>
+  <div class="box" style="left:250px;top:76px;width:320px;height:70px"></div><div class="lbl s" style="left:266px;top:86px">Reference sources<br><b style="font-size:20px;color:#333">1,248</b> docs · 3.1M words</div>
+  <div class="box" style="left:590px;top:76px;width:320px;height:70px"></div><div class="lbl s" style="left:606px;top:86px">Past submissions (auto-added)<br><b style="font-size:20px;color:#333">4,902</b> docs · 9.8M words</div>
+  <div class="box" style="left:930px;top:76px;width:320px;height:70px"></div><div class="lbl s" style="left:946px;top:86px">Shared public corpus<br><b style="font-size:20px;color:#333">6.4M</b> docs · Wikipedia, arXiv…</div>
+  <div class="box" style="left:250px;top:166px;width:300px;height:32px"></div><div class="lbl s" style="left:262px;top:174px">🔍 Search sources</div>
+  <div class="chip" style="left:566px;top:170px">Type ▾</div><div class="chip" style="left:630px;top:170px">Course ▾</div><div class="chip" style="left:706px;top:170px">Indexed ▾</div>
+  <div class="box" style="left:250px;top:216px;width:1000px;height:550px"></div>
+  <div class="lbl s" style="left:270px;top:228px;width:960px"><span style="display:inline-block;width:420px">Title</span><span style="display:inline-block;width:120px">Type</span><span style="display:inline-block;width:120px">Words</span><span style="display:inline-block;width:150px">Added</span><span style="display:inline-block;width:120px">Matched in</span></div>
+  <div class="row" style="left:250px;top:252px;width:1000px"></div>
+  <div class="txt" style="left:270px;top:262px;width:960px;line-height:2.9">
+    <span style="display:inline-block;width:420px">Unit guide — POL2CPA 2026.pdf</span><span style="display:inline-block;width:120px">source</span><span style="display:inline-block;width:120px">4,210</span><span style="display:inline-block;width:150px">28 Aug</span><span style="display:inline-block;width:120px">31 checks</span>⋯<br>
+    <span style="display:inline-block;width:420px">Lecture notes wk1-6.docx</span><span style="display:inline-block;width:120px">source</span><span style="display:inline-block;width:120px">18,900</span><span style="display:inline-block;width:150px">28 Aug</span><span style="display:inline-block;width:120px">112 checks</span>⋯<br>
+    <span style="display:inline-block;width:420px">Submission #812 — S. Patel</span><span style="display:inline-block;width:120px">submission</span><span style="display:inline-block;width:120px">2,040</span><span style="display:inline-block;width:150px">Oct 2025</span><span style="display:inline-block;width:120px">3 checks</span>⋯<br>
+    <span style="display:inline-block;width:420px;color:#999">Reader — climate economics.pdf</span><span style="display:inline-block;width:120px;color:#999">source</span><span style="display:inline-block;width:120px;color:#999">61,000</span><span style="display:inline-block;width:150px;color:#999">just now</span><span style="display:inline-block;width:120px;color:#999">indexing ◔</span>⋯
+  </div>
+  <div class="note" style="left:900px;top:640px;width:330px">"Matched in" shows how often each source catches something — useful for spotting recycled essays. Public corpus is read-only.</div>
+</div>
+
+<!-- 6 SETTINGS -->
+<div class="screen" id="s6"><h6>06 · Settings</h6>
+  <div class="side"><div class="lbl h" style="left:24px;top:18px;font-size:16px">Swipe</div><div class="box grey" style="left:24px;top:56px;width:172px;height:34px"></div><div class="lbl s" style="left:34px;top:64px">La Trobe University ▾</div>
+    <div class="nav" style="top:120px">Checks</div><div class="nav" style="top:150px">New check</div><div class="nav" style="top:180px">Sources</div><div class="nav" style="top:210px">Members</div><div class="nav on" style="top:240px">Settings</div></div>
+  <div class="top"><div class="lbl h" style="left:250px;top:14px;font-size:16px">Settings</div></div>
+  <div class="txt" style="left:250px;top:80px;font-weight:700"><span style="border-bottom:2px solid #333;padding-bottom:4px">Organisation</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#888">Check defaults</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#888">API keys</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#888">Billing</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#888">Profile</span></div>
+  <div class="box" style="left:250px;top:120px;width:640px;height:300px"></div>
+  <div class="lbl" style="left:274px;top:140px">Organisation name</div><div class="box" style="left:274px;top:160px;width:400px;height:32px"></div>
+  <div class="lbl" style="left:274px;top:210px">Type</div><div class="box" style="left:274px;top:230px;width:200px;height:32px"></div><div class="lbl s" style="left:286px;top:238px">Institution ▾</div>
+  <div class="lbl" style="left:274px;top:280px">Report label</div><div class="box" style="left:274px;top:300px;width:400px;height:32px"></div><div class="lbl s" style="left:286px;top:308px">"Originality report"  (publishers often prefer "Originality"; schools "Similarity")</div>
+  <div class="btn" style="left:274px;top:360px;width:100px;height:34px;line-height:34px">Save</div>
+  <div class="box" style="left:920px;top:120px;width:330px;height:300px"></div>
+  <div class="lbl h" style="left:940px;top:136px;font-size:14px">Plan</div>
+  <div class="txt" style="left:940px;top:166px;line-height:2">Team · $149 / month<br>412 / 2,000 checks this month<br>Web search: on · AI ensemble: on<br>25 members (11 used)</div>
+  <div class="btn o" style="left:940px;top:290px;width:140px;height:32px;line-height:32px">Manage billing</div><div class="btn o" style="left:1090px;top:290px;width:140px;height:32px;line-height:32px">Upgrade</div>
+  <div class="box" style="left:250px;top:450px;width:1000px;height:300px"></div>
+  <div class="lbl h" style="left:274px;top:466px;font-size:14px">API keys</div><div class="btn o" style="left:1110px;top:462px;width:120px;height:30px;line-height:30px">+ New key</div>
+  <div class="txt" style="left:274px;top:500px;width:950px;line-height:2.6"><span style="display:inline-block;width:300px">Moodle plugin</span><span style="display:inline-block;width:200px">sk_live_7f3a…</span><span style="display:inline-block;width:200px">last used 2 min ago</span>Revoke<br><span style="display:inline-block;width:300px">Batch script</span><span style="display:inline-block;width:200px">sk_live_c19e…</span><span style="display:inline-block;width:200px">last used 3 days ago</span>Revoke</div>
+  <div class="note" style="left:274px;top:700px;width:900px">Key plaintext shown once in a dialog after creation. Members tab (separate page) handles invites and roles: owner / admin / member / viewer.</div>
+</div>
+</body></html>
