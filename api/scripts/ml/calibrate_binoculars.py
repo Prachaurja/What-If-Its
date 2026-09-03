@@ -6,6 +6,8 @@ rate, then picks the threshold with the highest accuracy subject to FPR <= a cap
 the paper's default. Writes the chosen threshold to data/binoculars_threshold.json.
 """
 from __future__ import annotations
+import sys, pathlib
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2]))  # make api/ importable when run as a script
 import argparse, json
 from pathlib import Path
 

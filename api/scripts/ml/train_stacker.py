@@ -10,6 +10,8 @@ then fit.
     python scripts/ml/train_stacker.py --sample 3000
 """
 from __future__ import annotations
+import sys, pathlib
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2]))  # make api/ importable when run as a script
 import argparse, joblib
 from pathlib import Path
 

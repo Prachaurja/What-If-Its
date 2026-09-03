@@ -19,6 +19,8 @@ The false-positive rate on human essays is the number that matters for a product
 that could get a student wrongly accused. Target: <= 2% on student-essay domains.
 """
 from __future__ import annotations
+import sys, pathlib
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2]))  # make api/ importable when run as a script
 import argparse, collections, json, sys
 
 def load_raid(sample: int | None):

@@ -20,6 +20,12 @@ class Settings(BaseSettings):
     winnow_w: int = 8
     min_shared: int = 3
 
+    # auth
+    jwt_secret: str = "dev-secret-change-me-in-production"
+    jwt_algorithm: str = "HS256"
+    access_token_minutes: int = 15
+    refresh_token_days: int = 30
+
     environment: str = "dev"
 
 settings = Settings()
