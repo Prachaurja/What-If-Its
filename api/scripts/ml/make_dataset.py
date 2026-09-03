@@ -70,8 +70,30 @@ def _load_raid_pairs():
         yield h, a
 
 
+def _make_paraphraser():
+    """Build a T5 paraphraser without relying on a pipeline task name (those have
+    been renamed across transformers versions). Returns a callable text -> text.
+    """
+    import torch
+    from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+    name = "humarin/chatgpt_paraphraser_on_T5_base"
+    tok = AutoTokenizer.from_pretrained(name)
+    model = AutoModelForSeq2SeqLM.from_pretrained(name)
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    model = model.to(device).eval()
+
+    @torch.no_grad()
+    def paraphrase(text: str) -> str:
+        enc = tok(f"paraphrase: {text}", return_tensors="pt",
+                  truncation=True, max_length=256).to(device)
+        out = model.generate(**enc, max_length=256, num_beams=4,
+                             do_sample=True, temperature=0.9)
+        return tok.decode(out[0], skip_special_tokens=True)
+
+    return paraphrase
+
+
 def main(n: int):
-    from transformers import pipeline
 
     Path("data").mkdir(exist_ok=True)
     out = Path("data/ai_dataset.jsonl")
@@ -87,8 +109,7 @@ def main(n: int):
         pairs = _load_raid_pairs()
         source = "RAID"
 
-    para = pipeline("text2text-generation",
-                    model="humarin/chatgpt_paraphraser_on_T5_base", max_length=256)
+    para = _make_paraphraser()
 
     rows = []
     made = {"human": 0, "ai": 0, "para": 0}
@@ -98,7 +119,7 @@ def main(n: int):
         if made["ai"] < n and len(ai_text.split()) > 40:
             rows.append({"text": ai_text, "label": 1}); made["ai"] += 1
             if made["para"] < n:
-                p = para(ai_text[:900])[0]["generated_text"]
+                p = para(ai_text[:900])
                 rows.append({"text": p, "label": 2}); made["para"] += 1
         if all(v >= n for v in made.values()):
             break
