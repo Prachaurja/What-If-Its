@@ -12,7 +12,8 @@ MIN_WORDS = 20
 class TooShort(Exception):
     pass
 
-def run_check(db: Session, title: str, text: str, org_id: int | None = None) -> dict:
+def run_check(db: Session, title: str, text: str, org_id: int | None = None,
+              run_ai: bool = True) -> dict:
     if len(text.split()) < MIN_WORDS:
         raise TooShort(f"Need at least {MIN_WORDS} words to check")
     doc = add_document(db, title, text, DocKind.submission, org_id=org_id)
@@ -21,5 +22,15 @@ def run_check(db: Session, title: str, text: str, org_id: int | None = None) -> 
     report["document_id"] = doc.id
     report["title"] = title
     report["text"] = text
-    report["ai"] = None  # AI ensemble arrives in Phase 1
+    # AI detection (Phase 1). Runs Binoculars if torch + models are installed;
+    # otherwise degrades to "not scored" without breaking the similarity check.
+    if run_ai:
+        try:
+            from app.services.ai_detect.ensemble import run as run_ai_detect
+            report["ai"] = run_ai_detect(text)
+        except Exception as e:
+            report["ai"] = {"scored": False, "reason": f"AI detector unavailable: {e}",
+                            "prob": None, "band": None, "verdict": "not scored"}
+    else:
+        report["ai"] = None
     return report

@@ -11,8 +11,10 @@ from app.models.check import CheckStatus
 router = APIRouter(prefix="/api/v1", tags=["checks"])
 
 def _persist(db: Session, report: dict) -> dict:
+    ai = report.get("ai") or {}
     check = Check(document_id=report["document_id"], status=CheckStatus.done,
-                  similarity_pct=report["similarity_percent"], payload=report)
+                  similarity_pct=report["similarity_percent"],
+                  ai_prob=ai.get("prob"), payload=report)
     db.add(check); db.commit()
     report["check_id"] = check.id
     return report
